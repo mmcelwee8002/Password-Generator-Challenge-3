@@ -46,7 +46,7 @@ function generatePassword() {
         // Validates user input
         // Start user input prompts
         passwordLength = parseInt(prompt("You must choose between 8 and 128"));
-
+generatePassword()
     } else {
         // Continues once user input is validated
         confirmNumber = confirm("Will this contain numbers? Ok for 'Yes', Cancel for 'No' ");
@@ -55,16 +55,63 @@ function generatePassword() {
         confirmLowercase = confirm("Will this contain Lowercase letters? Ok for 'Yes', Cancel for 'No' ");
     };
 
-    // Else if for 4 negative options
+    // Else if for 4 no options
     if (!confirmCharacter && !confirmNumber && !confirmUppercase && !confirmLowercase) {
         passwordChoices = alert("Unable to create password... Please try again!");
 
     }
     // First if statement that uses user input prompts to determine passwordChoices
-    // Else if for 4 positive options
+    // Else if for 4 ok/yes options
     else if (confirmCharacter && confirmNumber && confirmUppercase && confirmLowercase) {
 
-    
+        passwordChoices = character.concat(number, letters, letters2);
+    }
+    // Else if for 3 ok/yes options
+    else if (confirmCharacter && confirmNumber && confirmUppercase) {
+        passwordChoices = character.concat(number, letters2);
+    }
+    else if (confirmCharacter && confirmNumber && confirmLowercase) {
+        passwordChoices = character.concat(number, letters);
+    }
+    else if (confirmCharacter && confirmLowercase && confirmUppercase) {
+        passwordChoices = character.concat(letters, letters2);
+    }
+    else if (confirmNumber && confirmLowercase && confirmUppercase) {
+        passwordChoices = number.concat(letters, letters2);
+    }
+    // Else if for 2 ok/yes options
+    else if (confirmCharacter && confirmNumber) {
+        passwordChoices = character.concat(number);
+
+    } else if (confirmCharacter && confirmLowercase) {
+        passwordChoices = character.concat(letters);
+
+    } else if (confirmCharacter && confirmUppercase) {
+        passwordChoices = character.concat(letters2);
+    }
+    else if (confirmLowercase && confirmNumber) {
+        passwordChoices = letters.concat(number);
+
+    } else if (confirmLowercase && confirmUppercase) {
+        passwordChoices = letters.concat(letters2);
+
+    } else if (confirmNumber && confirmUppercase) {
+        passwordChoices = number.concat(letters2);
+    }
+    // Else if for 1 ok/yes option
+    else if (confirmCharacter) {
+        passwordChoices = character;
+    }
+    else if (confirmNumber) {
+        passwordChoices = number;
+    }
+    else if (confirmLowercase) {
+        passwordChoices = letters;
+    }
+    // Created space variable to fill uppercase conversion
+    else if (confirmUppercase) {
+        passwordChoices = space.concat(letters2);
+    };
 
     // password variable is an array placeholder for user generated amount of length
     var password = [];
@@ -85,6 +132,5 @@ function generatePassword() {
 // Changed function input to use textcontent
 function UserInput(ps) {
     document.getElementById("password").textContent = ps;
-
 }
 
