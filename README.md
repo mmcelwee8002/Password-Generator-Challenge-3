@@ -26,8 +26,8 @@ Matthew McElwee
 
 
 ### Screenshots of Portfolio
- ![Password Generator #1](Develop\images\PW-Generator-1.png "Image #1");
+ ![Password Generator #1](Develop/images/PW-Generator-1.png "Image #1");
 
- ![Password Generator #1](Develop\images\PW-Generator-2.png  "Image #2");
+ ![Password Generator #1](Develop/images/PW-Generator-2.png  "Image #2");
 
 
