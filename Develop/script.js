@@ -37,6 +37,8 @@ get.addEventListener("click", function () {
 
 // Start function to generate password
 function generatePassword() {
+    alert ("Welcome to password Generator please click 'ok' to continue");
+
     // Asks for user input
     passwordLength = parseInt(prompt("How many characters would you like your password? Choose between 8 and 128"));
     // First if statement for user validation 
